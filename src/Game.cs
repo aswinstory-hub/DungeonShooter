@@ -12,6 +12,7 @@ class Game
     const int WINDOW_HEIGHT = 720;
 
     RenderTexture2D target;
+    Player player;
 
     public Game()
     {
@@ -21,6 +22,10 @@ class Game
 
         // CREATE INTERNAL RENDER TEXTURE
         target = Raylib.LoadRenderTexture(GAME_WIDTH, GAME_HEIGHT);
+
+        // Initialize Classes
+        player = new Player();
+
 
         // ENABLE NEAREST-NEIGHBOR FILTERING
         Raylib.SetTextureFilter(
@@ -44,26 +49,20 @@ class Game
 
     void Update()
     {
-
+        player.update();
     }
 
     void Draw()
     {
-        //
-        // DRAW EVERYTHING TO SMALL INTERNAL RESOLUTION
-        //
         Raylib.BeginTextureMode(target);
 
         Raylib.ClearBackground(Color.Black);
 
-        // TEST RECTANGLE
-        Raylib.DrawRectangle(100, 80, 16, 16, Color.Red);
+        player.draw();
 
         Raylib.EndTextureMode();
 
-        //
-        // DRAW SCALED RESULT TO SCREEN
-        //
+
         Raylib.BeginDrawing();
 
         Raylib.ClearBackground(Color.Black);
