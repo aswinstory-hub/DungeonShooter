@@ -34,8 +34,8 @@ This phase is pure gameplay.
 ## Player Systems
 
 ### Movement
-- [ ] 8-direction movement
-- [ ] smooth acceleration
+- [x] 8-direction movement
+- [x] smooth acceleration
 - [ ] rolling/dodge
 - [ ] collision system
 - [ ] camera follow

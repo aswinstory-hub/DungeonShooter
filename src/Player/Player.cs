@@ -98,8 +98,6 @@ class Player
         velocity.X = Math.Clamp(velocity.X, -maxSpeed, maxSpeed);
         velocity.Y = Math.Clamp(velocity.Y, -maxSpeed, maxSpeed);
 
-        velocity.X = (int)velocity.X;
-        velocity.Y = (int)velocity.Y;
 
     }
 
